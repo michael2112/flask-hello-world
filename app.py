@@ -44,7 +44,8 @@ def path_type(value):
 # name route
 @app.route("/name/<name>")
 def name_type(name):
-    if name.lower() == "kate":
+    names = ["mike","kate","sam"]
+    if any(name.lower() in names for x in name.lower()):
         return "Hello {}".format(name), 200
     else:
         return "Not Found", 404
